@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @measurement.product_id %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @measurement.product.name %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @measurement.color %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @measurement.gender %>
+</p>
+
+<p>
+  <b>Inseam:</b>
+  <%= @measurement.inseam %>
+</p>
+
+<p>
+  <b>Waist:</b>
+  <%= @measurement.waist %>
+</p>
+
+<p>
+  <b>Rise:</b>
+  <%= @measurement.rise %>
+</p>
+
+<p>
+  <b>Hips:</b>
+  <%= @measurement.hips %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @measurement.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @measurement.weight %>
+</p>
+
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

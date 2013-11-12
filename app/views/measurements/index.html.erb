@@ -1,0 +1,41 @@
+<h1>Listing measurements</h1>
+
+<table>
+  <tr>
+    <th>Product id</th>
+    <th>Product name</th>
+    <th>Color</th>
+    <th>Gender</th>
+    <th>Inseam</th>
+    <th>Waist</th>
+    <th>Rise</th>
+    <th>Hips</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @measurements.each do |measurement| %>
+  <tr>
+    <td><%= measurement.product_id %></td>
+    <td><%= measurement.product.name%></td>
+    <td><%= measurement.color %></td>
+    <td><%= measurement.gender %></td>
+    <td><%= measurement.inseam %></td>
+    <td><%= measurement.waist %></td>
+    <td><%= measurement.rise %></td>
+    <td><%= measurement.hips %></td>
+    <td><%= measurement.height %></td>
+    <td><%= measurement.weight %></td>
+    <td><%= link_to 'Show', measurement %></td>
+    <td><%= link_to 'Edit', edit_measurement_path(measurement) %></td>
+    <td><%= link_to 'Destroy', measurement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Measurement', new_measurement_path %>

@@ -1,0 +1,38 @@
+<h1>Search</h1>
+
+<% if flash[:error] %>
+    <div id="error_explanation">
+      <%= flash[:error] %>
+    </div>
+<% end %>
+
+<%= form_tag measurements_path, :method => 'get' do %>
+    <p>
+      (test) Merchant: <%= select_tag "merchant", options_for_select( Product.all.map {|p| [p.merchant]} , params[:color]), :include_blank => true %>
+    </p>
+    <p>
+      Color: <%= select_tag "color", options_for_select( Measurement.uniq.pluck(:color) , params[:color]), :include_blank => true %>
+    </p>
+    <p>
+      Gender: <%= select_tag "gender", options_for_select( %w(Male Female), params[:gender]), :include_blank => true %>
+    </p>
+    <p>
+      Inseam: <%= select_tag "inseam", options_for_select( %w(29 30 31 32 33 34 35 36), params[:inseam]), :include_blank => true %> inches
+    </p>
+    <p>
+      Waist: <%= select_tag "waist", options_for_select( %w(28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44), params[:waist]), :include_blank => true %> inches
+    </p>
+    <p>
+      Hips: <%= select_tag "hips", options_for_select( %w(26 27 28 29 30 31 32 33 34 35 36 37), params[:hips]), :include_blank => true %> inches
+    </p>
+    <p>
+      Height: <%= text_field_tag :height, params[:height] %>
+    </p>
+    <p>
+      Weight: <%= text_field_tag :weight, params[:weight] %>
+    </p>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>

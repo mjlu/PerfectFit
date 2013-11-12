@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  product_id: 1
+  color: MyString
+  gender: MyString
+  inseam: 1
+  waist: 1
+  rise: 1
+  hips: 1
+  height: 1
+  weight: 1
+
+two:
+  product_id: 1
+  color: MyString
+  gender: MyString
+  inseam: 1
+  waist: 1
+  rise: 1
+  hips: 1
+  height: 1
+  weight: 1

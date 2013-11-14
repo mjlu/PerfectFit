@@ -14,7 +14,8 @@
   <div class="field">
     <%= f.label :product_id %><br />
     <% all_products = Product.all %>
-    <% menu_items = all_products.map { |c| [ c.name, c.id ] } %>
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += all_products.map { |c| [ c.name, c.id ] } %>
     <%= f.select :product_id, menu_items %>
   </div>
   <div class="field">
@@ -23,35 +24,61 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br />
-    <% menu_items = [['Male', 'Male'],['Female', 'Female']] %>
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [['Male', 'Male'],['Female', 'Female']] %>
     <%= f.select :gender, menu_items %>
   </div>
   <div class="field">
     <%= f.label :inseam %><br />
-    <% menu_items = [[29, 29],[30, 30],[31, 31],[32, 32],[33, 33],[34, 34],[35, 35],[36, 36]] %>
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[30, 30],[31, 31],[32, 32],[33, 33],[34, 34],[35, 35]] %>
     <%= f.select :inseam, menu_items %>
   </div>
   <div class="field">
     <%= f.label :waist %><br />
-    <% menu_items = [[28, 28],[29, 29],[30, 30],[31, 31],[32, 32],[33, 33],[34, 34],[35, 35],[36, 36],[37, 37],[38, 38],[39, 39],[40, 40],[41, 41],[42, 42],[43, 43],[44, 44]] %>
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[23, 23],[24, 24],[25, 25],[26, 26],[27, 27],[28, 28],[29, 29],[30, 30],[31, 31],[32, 32],[33, 33],[34, 34],[35, 35],[36, 36],[37, 37],[38, 38],[39, 39],[40, 40],[41, 41],[42, 42],[43, 43]] %>
     <%= f.select :waist, menu_items %>
   </div>
   <div class="field">
-    <%= f.label :rise %><br />
-    <%= f.number_field :rise %>
+    <%= f.label :height_feet %><br />
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[4, 4],[5, 5],[6, 6]] %>
+    <%= f.select :height_feet, menu_items %>
   </div>
   <div class="field">
-    <%= f.label :hips %><br />
-    <% menu_items = [[26, 26],[27, 27],[28, 28],[29, 29],[30, 30],[31, 31],[32, 32],[33, 33],[34, 34],[35, 35],[36, 36],[37, 37]] %>
-    <%= f.select :hips, menu_items %>
+    <%= f.label :height_inch %><br />
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[0, 0],[1, 1],[2, 2],[3, 3],[4, 4],[5, 5],[6, 6],[7, 7],[8, 8],[9, 9],[10, 10],[11, 11]] %>
+    <%= f.select :height_inch, menu_items %>
   </div>
   <div class="field">
-    <%= f.label :height %><br />
-    <%= f.number_field :height %>
+    <%= f.label :height_feet2 %><br />
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[4, 4],[5, 5],[6, 6]] %>
+    <%= f.select :height_feet2, menu_items %>
+  </div>
+  <div class="field">
+    <%= f.label :height_inch2 %><br />
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[0, 0],[1, 1],[2, 2],[3, 3],[4, 4],[5, 5],[6, 6],[7, 7],[8, 8],[9, 9],[10, 10],[11, 11]] %>
+    <%= f.select :height_inch2, menu_items %>
   </div>
   <div class="field">
     <%= f.label :weight %><br />
-    <%= f.number_field :weight %>
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[90, 90],[95, 95],[100, 100],[105, 105],[110, 110],[115, 115],[120, 120],[125, 125],[130, 130],[135, 135],[140, 140],[145, 145],[145, 145],[145, 145],[145, 145],[150, 150],[155, 155],[160, 160],[165, 165],[170, 170],[175, 175],[180, 180],[185, 185],[190, 190],[195, 195],[200, 200],[205, 205],[210, 210],[215, 215],[220, 220]] %>
+    <%= f.select :weight, menu_items %>
+  </div>
+  <div class="field">
+    <%= f.label :weight2 %><br />
+    <% menu_items = [['Not decided', '']] %>
+    <% menu_items += [[90, 90],[95, 95],[100, 100],[105, 105],[110, 110],[115, 115],[120, 120],[125, 125],[130, 130],[135, 135],[140, 140],[145, 145],[145, 145],[145, 145],[145, 145],[150, 150],[155, 155],[160, 160],[165, 165],[170, 170],[175, 175],[180, 180],[185, 185],[190, 190],[195, 195],[200, 200],[205, 205],[210, 210],[215, 215],[220, 220]] %>
+    <%= f.select :weight2, menu_items %>
+  </div>
+  <div class="field">
+    <%= f.label :measurement_image %><br />
+    <%= f.file_field :image %>
   </div>
   <div class="actions">
     <%= f.submit %>

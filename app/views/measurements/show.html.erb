@@ -1,23 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Product:</b>
-  <%= @measurement.product_id %>
+  <b>Product Image:</b>
+  <%= image_tag @measurement.image_url if @measurement.image? %>
 </p>
 
 <p>
-  <b>Product:</b>
+  <b>Merchant:</b>
+  <%= @measurement.product.merchant %>
+</p>
+
+<p>
+  <b>Product name:</b>
   <%= @measurement.product.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @measurement.product.price %>
 </p>
 
 <p>
   <b>Color:</b>
   <%= @measurement.color %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%= @measurement.gender %>
 </p>
 
 <p>
@@ -30,26 +35,39 @@
   <%= @measurement.waist %>
 </p>
 
+<!--
+  the following is to see all the measurements data from database
+-->
 <p>
-  <b>Rise:</b>
-  <%= @measurement.rise %>
+  delete the followings:
 </p>
 
 <p>
-  <b>Hips:</b>
-  <%= @measurement.hips %>
+  <b>Gender:</b>
+  <%= @measurement.gender %>
 </p>
 
 <p>
-  <b>Height:</b>
-  <%= @measurement.height %>
+  <b>Range of height:</b>
+  <%= @measurement.height_feet %> feet  <%= @measurement.height_inch %> inches
+  to
+  <%= @measurement.height_feet2 %> feet  <%= @measurement.height_inch2 %> inches
 </p>
 
 <p>
-  <b>Weight:</b>
-  <%= @measurement.weight %>
+  <b>Range of weight:</b>
+  <%= @measurement.weight %> to <%= @measurement.weight2 %> lbs
 </p>
+<!--
+  data until here
+-->
+
+<div class="fb-comments" data-href="http://example.com/comments" data-numposts="5"></div>
+
+<div class="fb-comments" data-href="http://localhost:3000/measurements/" data-numposts="5"></div>
 
 
+<!--
 <%= link_to 'Edit', edit_measurement_path(@measurement) %> |
 <%= link_to 'Back', measurements_path %>
+-->

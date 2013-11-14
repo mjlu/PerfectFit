@@ -1,38 +1,69 @@
-<h1>Listing measurements</h1>
+<h1>Measurements</h1>
 
 <table>
   <tr>
-    <th>Product id</th>
-    <th>Product name</th>
-    <th>Color</th>
-    <th>Gender</th>
-    <th>Inseam</th>
-    <th>Waist</th>
-    <th>Rise</th>
-    <th>Hips</th>
-    <th>Height</th>
-    <th>Weight</th>
+    <th>Image</th>
+    <th>Merchant</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+
+<!--
+  the following is to see all the measurements data from database
+-->
+    <th>delete right</th>
+    <th>gender</th>
+    <th>color</th>
+    <th>inseam</th>
+    <th>waist</th>
+    <th>height(feet)</th>
+    <th>height(inches)</th>
+    <th>height(feet)2</th>
+    <th>height(inches)2</th>
+    <th>weight</th>
+    <th>weight2</th>
     <th></th>
     <th></th>
     <th></th>
+<!--
+  rows until here
+-->
   </tr>
 
 <% @measurements.each do |measurement| %>
   <tr>
-    <td><%= measurement.product_id %></td>
+    <td><%= image_tag(measurement.image_url, :class => 'product-image') if measurement.image? %></td>
+    <td><%= measurement.product.merchant %></td>
     <td><%= measurement.product.name%></td>
-    <td><%= measurement.color %></td>
+    <td><%= measurement.product.price %></td>
+    <td><%= link_to 'Show', measurement %></td>
+<!--
+    <td><%= link_to 'Show', measurement.product %></td>
+-->
+
+<!--
+  the following is to see all the measurements data from database
+-->
+    <td>delete right</td>
     <td><%= measurement.gender %></td>
+    <td><%= measurement.color %></td>
     <td><%= measurement.inseam %></td>
     <td><%= measurement.waist %></td>
-    <td><%= measurement.rise %></td>
-    <td><%= measurement.hips %></td>
-    <td><%= measurement.height %></td>
+    <td><%= measurement.height_feet %></td>
+    <td><%= measurement.height_inch %></td>
+    <td><%= measurement.height_feet2 %></td>
+    <td><%= measurement.height_inch2 %></td>
     <td><%= measurement.weight %></td>
+    <td><%= measurement.weight2 %></td>
     <td><%= link_to 'Show', measurement %></td>
     <td><%= link_to 'Edit', edit_measurement_path(measurement) %></td>
     <td><%= link_to 'Destroy', measurement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<!--
+  rows until here
+-->
+
   </tr>
+
 <% end %>
 </table>
 

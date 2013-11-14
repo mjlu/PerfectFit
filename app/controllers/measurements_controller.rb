@@ -2,13 +2,11 @@ class MeasurementsController < ApplicationController
   # GET /measurements
   # GET /measurements.json
   def index
-    @measurements = Measurement.search(params[:color],params[:gender],params[:inseam],params[:waist],params[:hip],params[:height],params[:weight])
-
+    @measurements = Measurement.search(params[:color],params[:gender],params[:height_feet],params[:height_inch],params[:weight])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @measurements }
     end
-
   end
 
   # GET /measurements/1
